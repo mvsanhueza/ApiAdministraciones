@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       to,
       subject,
       text: message,
-      html: `<p>${message}</p>`,
+      html: `<p>${message.replace(/\n/g, '<br>')}</p>`,
     }
 
     // Añadir el archivo adjunto si existe
